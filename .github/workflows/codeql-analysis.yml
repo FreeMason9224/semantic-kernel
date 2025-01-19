@@ -64,3 +64,20 @@ jobs:
         uses: github/codeql-action/analyze@v3
         with:
           category: "/language:${{matrix.language}}"
+      - name: Setup dotnet ${{ matrix.dotnet }}
+        uses: actions/setup-dotnet@v3
+        with:
+         dotnet-version: ${{ matrix.dotnet }}
+         include-prerelease: true
+         include-sdk: true
+          <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+     
+          <PropertyGroup>
+   
+          <TargetFramework>net8.0</TargetFramework>
+    
+          <UseWPF>true</UseWPF>
+          <UseWindowsForms>true</UseWindowsForms>
+          </PropertyGroup>
+          </Project>
+     
